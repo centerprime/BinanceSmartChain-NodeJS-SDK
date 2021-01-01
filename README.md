@@ -26,7 +26,7 @@ v8.16.0
       - [Keystore](#keystore)
       - [Private Key](#keystore)
     - [Balance](#balance)
-      - [Ether Balance](#etherbalance)
+      - [BNB Balance](#etherbalance)
       - [BEP20 Token Balance](#erc20tokenbalance)
     - [Send](#send)
       - [Send BNB](#sendether)
