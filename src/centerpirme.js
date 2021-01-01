@@ -78,7 +78,7 @@ class BnbManager {
     
     async getBEPTokenBalance(tokenAddress , address) {
         // ABI to transfer ERC20 Token
-        let abi = JSON.parse(fs.readFileSync('bep20ABI.json', 'utf-8'));
+        let abi = JSON.parse(fs.readFileSync('../src/bep20ABI.json', 'utf-8'));
         // Get ERC20 Token contract instance
         let contract = new this.web3.eth.Contract(abi, tokenAddress);
         // Get decimal
@@ -90,7 +90,7 @@ class BnbManager {
         /* send to hyperledger */
         const map = {
             "action_type" : "TOKEN_BALANCE",
-            "wallet_address" : wallet.address,
+            "wallet_address" : address,
             "balance" : balance / Math.pow(10,decimal),
             "status" : "SUCCESS"
         }

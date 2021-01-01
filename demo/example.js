@@ -1,7 +1,7 @@
 import BnbManager from "../src/centerpirme.js";
 
-var bnbManager = new BnbManager("https://ropsten.infura.io/v3/1ebda450682b4897920d8a721a289303");
-bnbManager.createAccount("0x6dBe810e3314546009bD6e1B29f9031211CdA5d2").then(
+var bnbManager = new BnbManager("https://data-seed-prebsc-1-s1.binance.org:8545");
+bnbManager.getBEPTokenBalance("0x6ce8da28e2f864420840cf74474eff5fd80e65b8","0x082a2027dc16f42d6e69be8fa13c94c17c910ebe").then(
     res=>{
         console.log(res);
     }, error=>{
@@ -20,4 +20,4 @@ bnbManager.createAccount("0x6dBe810e3314546009bD6e1B29f9031211CdA5d2").then(
 
 // bnbManager.sendToken(keystore,password,tokenContractAddress, toAddress,amount,3).then(res=>{
 //     console.log(res);
-// })
+// })   
