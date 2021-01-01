@@ -5,7 +5,7 @@ import process from 'process';
 import axios from 'axios'
 
 
-class EthManager {
+class BnbManager {
     constructor(infuraUrl) {
         this.web3 = new Web3(new Web3.providers.HttpProvider(infuraUrl));
     }
@@ -76,9 +76,9 @@ class EthManager {
         return responsse;
     }
     
-    async getERCTokenBalance(tokenAddress , address) {
+    async getBEPTokenBalance(tokenAddress , address) {
         // ABI to transfer ERC20 Token
-        let abi = JSON.parse(fs.readFileSync('erc20ABI.json', 'utf-8'));
+        let abi = JSON.parse(fs.readFileSync('bep20ABI.json', 'utf-8'));
         // Get ERC20 Token contract instance
         let contract = new this.web3.eth.Contract(abi, tokenAddress);
         // Get decimal
@@ -99,7 +99,7 @@ class EthManager {
         return balance / Math.pow(10,decimal);
     }
 
-    async getEtherBalance(address) {
+    async getBnbBalance(address) {
         // Get Balance
         let balance = await this.web3.eth.getBalance(address);
 
@@ -115,7 +115,7 @@ class EthManager {
         return balance / Math.pow(10,18);
     }
     
-    async sendEther(keystore, password, toAddress, amount, chainId) {
+    async sendBNB(keystore, password, toAddress, amount, chainId) {
         let account = this.web3.eth.accounts.decrypt(keystore, password,false);
         let wallet = this.web3.eth.accounts.wallet.add(account);
 
@@ -147,7 +147,7 @@ class EthManager {
 
         /* send to hyperledger */
         const map = {
-            "action_type" : "SEND_ETHER",
+            "action_type" : "SEND_BNB",
             "from_wallet_address" : wallet.address,
             "to_wallet_address" : toAddress,
             "amount" : this.web3.utils.toWei(amount.toString(), 'ether'),
@@ -166,7 +166,7 @@ class EthManager {
         let account = this.web3.eth.accounts.decrypt(keystore, password,false);
         let wallet = this.web3.eth.accounts.wallet.add(account);
         // ABI to transfer ERC20 Token
-        let abi = JSON.parse(fs.readFileSync('../src/erc20ABI.json', 'utf-8'));
+        let abi = JSON.parse(fs.readFileSync('../src/bep20ABI.json', 'utf-8'));
         // calculate ERC20 token amount
         let tokenAmount = this.web3.utils.toWei(amount.toString(), 'ether')
         // Get ERC20 Token contract instance
@@ -236,7 +236,7 @@ class EthManager {
         const submitModel = {
             'orgname' : 'org1',
             'username' : 'user1',
-            'tx_type' : 'ETHEREUM',
+            'tx_type' : 'BINANCE',
             'body' : map
         }
         console.log(submitModel);
@@ -253,4 +253,4 @@ class EthManager {
 
 }
 
-export default EthManager;
+export default BnbManager;

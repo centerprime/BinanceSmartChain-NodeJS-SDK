@@ -1,14 +1,15 @@
 {
-  "name": "node-ethereum-sdk",
-  "version": "1.0.2",
-  "description": "Centerprime Node Ethereum SDK",
+  "name": "node-binance-sdk",
+  "version": "1.0.0",
+  "description": "Centerprime Node Binance Smart Chain SDK",
   "type": "module",
   "main": "src/centerprime.js",
   "keywords": [
     "ethereum",
     "blockchain",
     "sdk",
-    "web3"
+    "web3",
+    "binance"
   ],
   "author": "Centerprime",
   "license": "UNLICENSED",
@@ -40,10 +41,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/centerprime/Node-Ethereum-SDK.git"
+    "url": "git+https://github.com/centerprime/Node-Binance-SDK.git"
   },
   "bugs": {
-    "url": "https://github.com/centerprime/Node-Ethereum-SDK/issues"
+    "url": "https://github.com/centerprime/Node-Binance-SDK/issues"
   },
-  "homepage": "https://github.com/centerprime/Node-Ethereum-SDK#readme"
+  "homepage": "https://github.com/centerprime/Node-Binance-SDK#readme"
 }
