@@ -1,0 +1,49 @@
+{
+  "name": "node-ethereum-sdk",
+  "version": "1.0.2",
+  "description": "Centerprime Node Ethereum SDK",
+  "type": "module",
+  "main": "src/centerprime.js",
+  "keywords": [
+    "ethereum",
+    "blockchain",
+    "sdk",
+    "web3"
+  ],
+  "author": "Centerprime",
+  "license": "UNLICENSED",
+  "spm": {
+    "main": "src/centerprime.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.1.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chromedriver": "80.0.1",
+    "codecov": "^3.3.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.4.0",
+    "eslint-loader": "^4.0.0",
+    "eslint-plugin-jsdoc": "^24.0.0",
+    "mocha": "^7.1.1",
+    "nyc": "15.0.1",
+    "randomstring": "^1.1.5",
+    "selenium-webdriver": "^4.0.0-alpha.7",
+    "webpack": "4.43.0",
+    "webpack-cli": "^3.3.6"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "web3": "^1.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/centerprime/Node-Ethereum-SDK.git"
+  },
+  "bugs": {
+    "url": "https://github.com/centerprime/Node-Ethereum-SDK/issues"
+  },
+  "homepage": "https://github.com/centerprime/Node-Ethereum-SDK#readme"
+}
