@@ -1,4 +1,4 @@
-# Center Prime Node Binance Smart Chain SDK
+# Binance SmartChain NodeJS SDK
 
 ## Prerequisites
 
