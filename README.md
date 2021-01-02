@@ -31,6 +31,7 @@ v8.16.0
     - [Send](#send)
       - [Send BNB](#sendether)
       - [Send BEP20 Token](#senderc20token)
+  - [Demo](#demo)
 
 ## Getting Started
 
@@ -156,4 +157,20 @@ bnbManager.sendBNB(keystore, password , toAddress , amount , chainId)
   .then(res => {
             console.log(res);
         });
+```
+
+### Demo
+
+First run backend 
+
+```js
+   npm install
+   npm start
+```
+
+Second run frontend /frontend/ 
+
+```js
+   npm install
+   npm start
 ```
