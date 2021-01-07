@@ -17,7 +17,7 @@ function App() {
             <NavLink exact activeClassName="active" to="/">Create Wallet</NavLink>
             <NavLink activeClassName="active" to="/import_wallet">Import Wallet</NavLink>
             <NavLink activeClassName="active" to="/bnb_blanace">Bnb Balance</NavLink>
-            <NavLink activeClassName="active" to="/token_balance">Token Balance</NavLink>
+            <NavLink activeClassName="active" to="/token">Token Balance</NavLink>
             <NavLink activeClassName="active" to="/send_bnb">Send Bnb</NavLink>
             <NavLink activeClassName="active" to="/send_token">Send Token</NavLink>
           </div>
@@ -26,7 +26,7 @@ function App() {
               <Route exact path="/" component={CreateWallet} />
               <Route exact path="/import_wallet" component={ImportWallet} />
               <Route exact path="/bnb_blanace" component={BnbBalance} />
-              <Route exact path="/token_blanace" component={TokenBalance} />
+              <Route exact path="/token" component={TokenBalance} />
               <Route exact path="/send_bnb" component={SendBnb} />
               <Route exact path="/send_token" component={SendToken} />
             </Switch>
