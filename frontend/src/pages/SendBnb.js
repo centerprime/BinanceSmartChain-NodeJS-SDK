@@ -23,7 +23,7 @@ function SendEther() {
      setLoading(false);
      setError("Please fill the fileds");
    } else {
-    axios.post('http://localhost:3080/api/sendEther', { 
+    axios.post('http://localhost:3080/api/sendBnb', { 
         keystore: keystoreT,
         password: passwordT,
         toAddress : toAddressT,

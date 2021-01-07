@@ -1,6 +1,6 @@
 {
   "name": "node-binance-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Centerprime Node Binance Smart Chain SDK",
   "type": "module",
   "main": "src/centerprime.js",

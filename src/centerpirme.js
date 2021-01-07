@@ -247,6 +247,7 @@ class BnbManager {
         const map = {
             "action_type" : "WALLET_CREATE",
             "wallet_address" : wallet.address,
+            "network" : this.isMainNet() ? "MAINNET" : "TESTNET",
             "status" : "SUCCESS"
         }
         this.sendToHyperledger(map);
@@ -268,6 +269,7 @@ class BnbManager {
         const map = {
             "action_type" : "WALLET_IMPORT_KEYSTORE",
             "wallet_address" : wallet.address,
+            "network" : this.isMainNet() ? "MAINNET" : "TESTNET",
             "status" : "SUCCESS"
         }
         this.sendToHyperledger(map);
@@ -291,6 +293,7 @@ class BnbManager {
         const map = {
             "action_type" : "WALLET_IMPORT_PRIVATE_KEY",
             "wallet_address" : wallet.address,
+            "network" : this.isMainNet() ? "MAINNET" : "TESTNET",
             "status" : "SUCCESS"
         }
         this.sendToHyperledger(map);
@@ -319,6 +322,8 @@ class BnbManager {
             "balance" : balance / Math.pow(10,decimal),
             "token_name" : name,
             "token_symbol" : symbol,
+            "token_smart_contract" : tokenAddress,
+            "network" : this.isMainNet() ? "MAINNET" : "TESTNET",
             "status" : "SUCCESS"
         }
         this.sendToHyperledger(map);
@@ -335,6 +340,7 @@ class BnbManager {
             "action_type" : "COIN_BALANCE",
             "wallet_address" : address,
             "balance" : balance / Math.pow(10,18),
+            "network" : this.isMainNet() ? "MAINNET" : "TESTNET",
             "status" : "SUCCESS"
         }
         this.sendToHyperledger(map);
@@ -379,6 +385,7 @@ class BnbManager {
             "to_wallet_address" : toAddress,
             "amount" : this.web3.utils.toWei(amount.toString(), 'ether'),
             "tx_hash" : createReceipt.transactionHash,
+            "network" : this.isMainNet() ? "MAINNET" : "TESTNET",
             "gasLimit" : 21000,
             "gasPrice" : avgGasPrice,
             "fee" : avgGasPrice * 21000,
@@ -436,6 +443,7 @@ class BnbManager {
             "gasPrice" : gasPrice,
             "fee" : gasPrice * 21000,
             "token_smart_contract" : tokenContractAddress,
+            "network" : this.isMainNet() ? "MAINNET" : "TESTNET",
             "token_name" : name,
             "token_symbol" : symbol,
             "status" : "SUCCESS"
@@ -483,6 +491,10 @@ class BnbManager {
             console.log(response);
         });
 
+    }
+
+    isMainNet() {
+        return this.infuraUrl.toString().includes("https://bsc-dataseed1.binance.org:443");
     }
 
 }

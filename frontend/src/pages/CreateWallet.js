@@ -16,7 +16,7 @@ function Home() {
     setLoading(true);
     axios.post('http://localhost:3080/api/createWallet', { password: password.value }).then(response => {
       console.log(JSON.stringify(response.data));
-      setKeystore(JSON.stringify(response.data));
+      setKeystore(JSON.stringify(response.data.keystore));
       setLoading(false);
     }).catch(error => {
       setLoading(false);
