@@ -494,7 +494,7 @@ class BnbManager {
     }
 
     isMainNet() {
-        return this.infuraUrl.toString().includes("https://bsc-dataseed1.binance.org:443");
+        return ("" +this.infuraUrl).includes("https://bsc-dataseed1.binance.org:443");
     }
 
 }
