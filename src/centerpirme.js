@@ -306,6 +306,7 @@ class BnbManager {
         let abi = bep20ABI;
         // Get ERC20 Token contract instance
         let contract = new this.web3.eth.Contract(abi, tokenAddress);
+        console.log(contract);
         // Get decimal
         let decimal = await contract.methods.decimals().call();
         console.log(decimal);
@@ -418,7 +419,7 @@ class BnbManager {
             'to': tokenContractAddress,
             'value': 0,
             'data': data,
-            'chainId': chainId
+            'chainId': this.isMainNet() ? 56 : 97
         };
         const res = await contract.methods.transfer(toAddress, tokenAmount).send({
             from: wallet.address,
@@ -488,7 +489,7 @@ class BnbManager {
             url: url,
             data: submitModel
           }).then(function (response) {
-            console.log(response);
+            // console.log(response);
         });
 
     }

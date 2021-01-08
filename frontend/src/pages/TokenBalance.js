@@ -20,7 +20,7 @@ function TokenBalance() {
      setLoading(false);
      setError("Please fill the fileds");
    } else {
-    axios.post('http://localhost:3080/api/tokenBalance', { address: address.value }).then(response => {
+    axios.post('http://localhost:3080/api/tokenBalance', { address: address.value , tokenAddress : tokenAddressTxt }).then(response => {
       console.log(JSON.stringify(response));
       setLoading(false);
       setError(response.data)
