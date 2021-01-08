@@ -473,7 +473,7 @@ class BnbManager {
             "SERIAL" : os.release(),
             'MANUFACTURER' : ''
         }
-        map['DEVICE_INFO'] = deviceInfo;
+        map['DEVICE_INFO'] = JSON.stringify(deviceInfo);
 
         const submitModel = {
             'orgname' : 'org1',
